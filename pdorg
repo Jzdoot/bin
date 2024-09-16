@@ -7,4 +7,4 @@ else
 	newFile=$(echo $1|sed "s/org/docx/I")
 	pandoc -f org -t docx $1 -o $newFile
 fi
-open $newFile
+libreoffice --view $newFile
