@@ -13,7 +13,9 @@ if [[ -z ${1+x} ]]; then
 		"$HOME/Documents/md/"
 		"$HOME/Documents/school/*"
 		"$HOME/Documents/school/English/*"
+		"$HOME/git/obsidian/*"
 	)
+	# . $XDG_CONFIG_HOME/gf/sources.conf
 	tmuxLS=$(tmux ls | awk -F : '{print $1}' | xargs)
 	dir=$(exa -Dd ${path[@]} | grep -v Icon | fzf --preview 'exa --tree -lu :500 {}')
 	name=$(printf %s $dir|awk -F "/" '{print $NF}')
